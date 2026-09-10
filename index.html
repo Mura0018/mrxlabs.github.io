@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MRX Labs</title>
+<meta name="description" content="MRX Labs builds Mcrypt — an offline password and secrets manager for Android. No server, no account.">
+<style>
+  :root{
+    --ink:#EDEAE3;
+    --ink-dim:#8A8F88;
+    --ink-faint:#4E544D;
+    --bg:#08090A;
+    --panel:#0E1010;
+    --line:#1C1F1C;
+    --live:#8FE05A;
+    --warn:#E0A83A;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+
+  header{padding:26px 0 0}
+  .topbar{display:flex;align-items:center;justify-content:space-between}
+  .mark{display:flex;align-items:center;gap:10px}
+  .mark svg{width:26px;height:26px;display:block}
+  .mark span{font-family:var(--mono);font-size:13px;letter-spacing:.22em;padding-left:.22em}
+  .langs{display:flex;gap:2px}
+  .langs button{
+    background:none;border:0;cursor:pointer;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    color:var(--ink-faint);padding:6px 8px;
+  }
+  .langs button[aria-pressed="true"]{color:var(--live)}
+  .langs button:focus-visible{outline:1px solid var(--live);outline-offset:1px}
+
+  .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+  .hero h1{
+    font-size:clamp(30px,7vw,46px);line-height:1.15;
+    font-weight:600;letter-spacing:-.02em;margin:0 0 20px;
+  }
+  .hero p{color:var(--ink-dim);margin:0;max-width:44ch}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.16em;
+     color:var(--ink-faint);font-weight:400;margin:0 0 22px}
+  h3{font-size:19px;font-weight:600;margin:34px 0 10px;letter-spacing:-.01em}
+  h3:first-of-type{margin-top:0}
+  p{margin:0 0 16px;max-width:66ch}
+  p:last-child{margin-bottom:0}
+
+  .facts{border-left:2px solid var(--live);background:var(--panel);padding:18px 20px;margin:0}
+  .facts div{display:flex;gap:14px;padding:7px 0}
+  .facts dt{font-family:var(--mono);font-size:12px;color:var(--ink-faint);
+            letter-spacing:.08em;min-width:104px;flex-shrink:0;padding-top:3px}
+  .facts dd{margin:0;color:var(--ink)}
+
+  .note{border-left:2px solid var(--warn);background:#100E09;
+        padding:16px 18px;color:var(--warn);margin:26px 0 0}
+  .note p{margin:0;color:var(--warn)}
+
+  .contact a{color:var(--live);text-decoration:none;
+             border-bottom:1px solid rgba(143,224,90,.35);font-family:var(--mono);font-size:16px}
+  .contact a:hover{border-bottom-color:var(--live)}
+  .contact a:focus-visible{outline:1px solid var(--live);outline-offset:3px}
+
+  footer{padding:34px 0 48px;color:var(--ink-faint);
+         font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+  footer div{margin-bottom:5px}
+
+  [data-lang]{display:none}
+  [data-lang].on{display:block}
+  span[data-lang].on{display:inline}
+
+  @media(max-width:520px){
+    body{font-size:16px}
+    .facts div{flex-direction:column;gap:3px}
+    .facts dt{padding-top:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="topbar">
+    <div class="mark">
+      <svg viewBox="0 0 48 48" aria-label="MRX Labs" role="img">
+        <rect x="6" y="8" width="7" height="32" fill="#EDEAE3"/>
+        <rect x="35" y="8" width="7" height="32" fill="#EDEAE3"/>
+        <path d="M13 8 L24 24 L35 8" fill="none" stroke="#EDEAE3" stroke-width="7" stroke-linejoin="miter"/>
+        <rect x="6" y="27" width="36" height="4" fill="#08090A"/>
+      </svg>
+      <span>MRX LABS</span>
+    </div>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="uz" aria-pressed="false">UZ</button>
+      <button type="button" data-set="ru" aria-pressed="false">RU</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>
+      <span data-lang="en" class="on">Your secrets never leave your phone.</span>
+      <span data-lang="uz">Sirlaringiz telefoningizdan chiqmaydi.</span>
+      <span data-lang="ru">Ваши секреты не покидают телефон.</span>
+    </h1>
+    <p>
+      <span data-lang="en" class="on">MRX Labs builds Mcrypt, an offline password and secrets manager for Android. There is no server to trust, because there is no server.</span>
+      <span data-lang="uz">MRX Labs Mcrypt ilovasini quradi — Android uchun internetsiz ishlaydigan parol va sirlar menejeri. Ishonadigan server yo'q, chunki server umuman yo'q.</span>
+      <span data-lang="ru">MRX Labs создаёт Mcrypt — офлайн-менеджер паролей и секретов для Android. Серверу доверять не нужно, потому что сервера нет.</span>
+    </p>
+  </div>
+</header>
+
+<section>
+  <h2>
+    <span data-lang="en" class="on">Mcrypt</span>
+    <span data-lang="uz">Mcrypt</span>
+    <span data-lang="ru">Mcrypt</span>
+  </h2>
+
+  <div data-lang="en" class="on">
+    <p>Passwords, cards, notes, API keys, SSH keys, certificates and environment files — stored in one encrypted vault on your device. Nothing syncs anywhere unless you move the file yourself.</p>
+    <p>The vault is unlocked by a master password you choose. That password is never stored, never transmitted and never recoverable. If you lose it and lose your recovery key, the vault stays closed — including to us.</p>
+  </div>
+  <div data-lang="uz">
+    <p>Parollar, kartalar, eslatmalar, API kalitlar, SSH kalitlar, sertifikatlar va .env fayllar — hammasi qurilmangizdagi bitta shifrlangan omborda. Faylni o'zingiz ko'chirmasangiz, hech qayerga sinxronlanmaydi.</p>
+    <p>Ombor siz tanlagan master parol bilan ochiladi. U hech qayerda saqlanmaydi, uzatilmaydi va tiklanmaydi. Parolni ham, tiklash kalitini ham yo'qotsangiz — ombor yopiq qoladi, biz uchun ham.</p>
+  </div>
+  <div data-lang="ru">
+    <p>Пароли, карты, заметки, API-ключи, SSH-ключи, сертификаты и .env файлы — в одном зашифрованном хранилище на вашем устройстве. Ничего никуда не синхронизируется, пока вы сами не перенесёте файл.</p>
+    <p>Хранилище открывается мастер-паролем, который выбираете вы. Он нигде не хранится, не передаётся и не восстанавливается. Если потерять и его, и ключ восстановления — хранилище останется закрытым, в том числе для нас.</p>
+  </div>
+
+  <dl class="facts">
+    <div>
+      <dt>ENCRYPTION</dt>
+      <dd>XChaCha20-Poly1305</dd>
+    </div>
+    <div>
+      <dt>KEY DERIVATION</dt>
+      <dd>Argon2id</dd>
+    </div>
+    <div>
+      <dt>DATABASE</dt>
+      <dd>SQLCipher</dd>
+    </div>
+    <div>
+      <dt>PLATFORM</dt>
+      <dd>Android 11+</dd>
+    </div>
+  </dl>
+</section>
+
+<section>
+  <h2>
+    <span data-lang="en" class="on">Privacy policy</span>
+    <span data-lang="uz">Maxfiylik siyosati</span>
+    <span data-lang="ru">Политика конфиденциальности</span>
+  </h2>
+
+  <div data-lang="en" class="on">
+    <h3>What we collect</h3>
+    <p>Nothing. Mcrypt has no account system, no analytics, no crash reporting and no advertising. We operate no servers that receive data from the app.</p>
+
+    <h3>What stays on your device</h3>
+    <p>Everything you enter — passwords, keys, notes, files and settings — is encrypted and written to your device's private storage. It is not readable by other apps and is not backed up to any cloud by the app.</p>
+
+    <h3>Permissions</h3>
+    <p>Mcrypt requests only the permissions it needs to work on your device. It does not request internet access for storing or reading your data.</p>
+
+    <h3>Third parties</h3>
+    <p>We share nothing, because we receive nothing. If you choose to copy a backup file to a service such as Google Drive, that file is encrypted and remains under your control; the terms of that service then apply to the file you placed there.</p>
+
+    <h3>Children</h3>
+    <p>Mcrypt is not directed at children under 13.</p>
+
+    <h3>Changes</h3>
+    <p>If this policy changes, the updated version appears on this page with a new date.</p>
+
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Last updated: 11 September 2026</p>
+  </div>
+
+  <div data-lang="uz">
+    <h3>Nima yig'amiz</h3>
+    <p>Hech narsa. Mcrypt'da akkaunt tizimi, analitika, xato hisobotlari va reklama yo'q. Ilovadan ma'lumot qabul qiladigan serverimiz yo'q.</p>
+
+    <h3>Qurilmangizda nima qoladi</h3>
+    <p>Siz kiritgan hamma narsa — parollar, kalitlar, eslatmalar, fayllar va sozlamalar — shifrlanadi va qurilmangizning shaxsiy xotirasiga yoziladi. Boshqa ilovalar uni o'qiy olmaydi va ilova uni hech qanday bulutga zaxiralamaydi.</p>
+
+    <h3>Ruxsatlar</h3>
+    <p>Mcrypt faqat qurilmada ishlashi uchun zarur ruxsatlarni so'raydi. Ma'lumotingizni saqlash yoki o'qish uchun internet ruxsati so'ralmaydi.</p>
+
+    <h3>Uchinchi tomonlar</h3>
+    <p>Biz hech narsa ulashmaymiz, chunki hech narsa olmaymiz. Zaxira faylini Google Drive kabi xizmatga ko'chirsangiz, u fayl shifrlangan holicha qoladi va nazorat sizda bo'ladi; o'sha faylga o'sha xizmatning shartlari qo'llaniladi.</p>
+
+    <h3>Bolalar</h3>
+    <p>Mcrypt 13 yoshgacha bo'lgan bolalarga mo'ljallanmagan.</p>
+
+    <h3>O'zgarishlar</h3>
+    <p>Siyosat o'zgarsa, yangilangan matn shu sahifada yangi sana bilan chiqadi.</p>
+
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Oxirgi yangilanish: 2026-yil 11-sentyabr</p>
+  </div>
+
+  <div data-lang="ru">
+    <h3>Что мы собираем</h3>
+    <p>Ничего. В Mcrypt нет аккаунтов, аналитики, отчётов о сбоях и рекламы. У нас нет серверов, которые принимали бы данные из приложения.</p>
+
+    <h3>Что остаётся на устройстве</h3>
+    <p>Всё, что вы вводите — пароли, ключи, заметки, файлы и настройки — шифруется и записывается в приватное хранилище устройства. Другие приложения это не читают, и приложение не копирует данные ни в какое облако.</p>
+
+    <h3>Разрешения</h3>
+    <p>Mcrypt запрашивает только разрешения, необходимые для работы на устройстве. Доступ в интернет для хранения или чтения ваших данных не запрашивается.</p>
+
+    <h3>Третьи стороны</h3>
+    <p>Мы ничем не делимся, потому что ничего не получаем. Если вы сами скопируете файл резервной копии в сервис вроде Google Drive, файл останется зашифрованным и под вашим контролем; к нему будут применяться условия того сервиса.</p>
+
+    <h3>Дети</h3>
+    <p>Mcrypt не предназначен для детей младше 13 лет.</p>
+
+    <h3>Изменения</h3>
+    <p>Если политика изменится, обновлённая версия появится на этой странице с новой датой.</p>
+
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Последнее обновление: 11 сентября 2026</p>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>
+    <span data-lang="en" class="on">Contact</span>
+    <span data-lang="uz">Bog'lanish</span>
+    <span data-lang="ru">Контакты</span>
+  </h2>
+  <p>
+    <span data-lang="en" class="on">Questions, bug reports and privacy requests:</span>
+    <span data-lang="uz">Savollar, xato haqida xabar va maxfiylik bo'yicha murojaatlar:</span>
+    <span data-lang="ru">Вопросы, сообщения об ошибках и запросы по конфиденциальности:</span>
+  </p>
+  <p><a href="mailto:mrxlabs.dev@gmail.com">mrxlabs.dev@gmail.com</a></p>
+
+  <div class="note">
+    <p>
+      <span data-lang="en" class="on">We cannot recover a lost master password or open anyone's vault. This is not a policy — it is how the encryption works.</span>
+      <span data-lang="uz">Yo'qolgan master parolni tiklay olmaymiz va hech kimning omborini ocholmaymiz. Bu qoida emas — shifrlash shunday ishlaydi.</span>
+      <span data-lang="ru">Мы не можем восстановить утерянный мастер-пароль или открыть чьё-либо хранилище. Это не политика — так устроено шифрование.</span>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div>MRX LABS</div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.langs button');
+  function set(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.classList.toggle('on', el.getAttribute('data-lang') === lang);
+    });
+    btns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === lang));
+    });
+    try{ localStorage.setItem('mrx-lang', lang); }catch(e){}
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ set(b.getAttribute('data-set')); });
+  });
+  var saved;
+  try{ saved = localStorage.getItem('mrx-lang'); }catch(e){}
+  if(!saved){
+    var nav = (navigator.language || 'en').slice(0,2);
+    saved = (nav === 'uz' || nav === 'ru') ? nav : 'en';
+  }
+  set(saved);
+})();
+</script>
+</body>
+</html>
