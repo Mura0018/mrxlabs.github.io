@@ -129,15 +129,15 @@
   </h2>
 
   <div data-lang="en" class="on">
-    <p>Passwords, cards, notes, API keys, SSH keys, certificates and environment files — stored in one encrypted vault on your device. Nothing syncs anywhere unless you move the file yourself.</p>
+    <p>Passwords, cards, notes, API keys, SSH keys, 2FA recovery codes and environment files — stored in one encrypted vault on your device. Nothing syncs anywhere unless you move the file yourself.</p>
     <p>The vault is unlocked by a master password you choose. That password is never stored, never transmitted and never recoverable. If you lose it and lose your recovery key, the vault stays closed — including to us.</p>
   </div>
   <div data-lang="uz">
-    <p>Parollar, kartalar, eslatmalar, API kalitlar, SSH kalitlar, sertifikatlar va .env fayllar — hammasi qurilmangizdagi bitta shifrlangan omborda. Faylni o'zingiz ko'chirmasangiz, hech qayerga sinxronlanmaydi.</p>
+    <p>Parollar, kartalar, eslatmalar, API kalitlar, SSH kalitlar, 2FA tiklash kodlari va .env fayllar — hammasi qurilmangizdagi bitta shifrlangan omborda. Faylni o'zingiz ko'chirmasangiz, hech qayerga sinxronlanmaydi.</p>
     <p>Ombor siz tanlagan master parol bilan ochiladi. U hech qayerda saqlanmaydi, uzatilmaydi va tiklanmaydi. Parolni ham, tiklash kalitini ham yo'qotsangiz — ombor yopiq qoladi, biz uchun ham.</p>
   </div>
   <div data-lang="ru">
-    <p>Пароли, карты, заметки, API-ключи, SSH-ключи, сертификаты и .env файлы — в одном зашифрованном хранилище на вашем устройстве. Ничего никуда не синхронизируется, пока вы сами не перенесёте файл.</p>
+    <p>Пароли, карты, заметки, API-ключи, SSH-ключи, коды восстановления 2FA и .env файлы — в одном зашифрованном хранилище на вашем устройстве. Ничего никуда не синхронизируется, пока вы сами не перенесёте файл.</p>
     <p>Хранилище открывается мастер-паролем, который выбираете вы. Он нигде не хранится, не передаётся и не восстанавливается. Если потерять и его, и ключ восстановления — хранилище останется закрытым, в том числе для нас.</p>
   </div>
 
@@ -176,7 +176,7 @@
     <p>Everything you enter — passwords, keys, notes, files and settings — is encrypted and written to your device's private storage. It is not readable by other apps and is not backed up to any cloud by the app.</p>
 
     <h3>Permissions</h3>
-    <p>Mcrypt requests only the permissions it needs to work on your device. It does not request internet access for storing or reading your data.</p>
+    <p>Mcrypt requests no Android permissions at all — not internet, not storage, not contacts. Without the internet permission the operating system will not let the app send anything anywhere. That is not a promise we are making; it is a capability the app does not have.</p>
 
     <h3>Third parties</h3>
     <p>We share nothing, because we receive nothing. If you choose to copy a backup file to a service such as Google Drive, that file is encrypted and remains under your control; the terms of that service then apply to the file you placed there.</p>
@@ -187,7 +187,7 @@
     <h3>Changes</h3>
     <p>If this policy changes, the updated version appears on this page with a new date.</p>
 
-    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Last updated: 11 September 2026</p>
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Last updated: 10 September 2026</p>
   </div>
 
   <div data-lang="uz">
@@ -198,7 +198,7 @@
     <p>Siz kiritgan hamma narsa — parollar, kalitlar, eslatmalar, fayllar va sozlamalar — shifrlanadi va qurilmangizning shaxsiy xotirasiga yoziladi. Boshqa ilovalar uni o'qiy olmaydi va ilova uni hech qanday bulutga zaxiralamaydi.</p>
 
     <h3>Ruxsatlar</h3>
-    <p>Mcrypt faqat qurilmada ishlashi uchun zarur ruxsatlarni so'raydi. Ma'lumotingizni saqlash yoki o'qish uchun internet ruxsati so'ralmaydi.</p>
+    <p>Mcrypt hech qanday Android ruxsatini so'ramaydi — na internet, na xotira, na kontaktlar. Internet ruxsati bo'lmagani uchun operatsion tizim ilovaga hech narsa jo'natishga yo'l qo'ymaydi. Bu bizning va'damiz emas — bu ilovada umuman yo'q imkoniyat.</p>
 
     <h3>Uchinchi tomonlar</h3>
     <p>Biz hech narsa ulashmaymiz, chunki hech narsa olmaymiz. Zaxira faylini Google Drive kabi xizmatga ko'chirsangiz, u fayl shifrlangan holicha qoladi va nazorat sizda bo'ladi; o'sha faylga o'sha xizmatning shartlari qo'llaniladi.</p>
@@ -209,7 +209,7 @@
     <h3>O'zgarishlar</h3>
     <p>Siyosat o'zgarsa, yangilangan matn shu sahifada yangi sana bilan chiqadi.</p>
 
-    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Oxirgi yangilanish: 2026-yil 11-sentyabr</p>
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Oxirgi yangilanish: 2026-yil 10-sentyabr</p>
   </div>
 
   <div data-lang="ru">
@@ -220,7 +220,7 @@
     <p>Всё, что вы вводите — пароли, ключи, заметки, файлы и настройки — шифруется и записывается в приватное хранилище устройства. Другие приложения это не читают, и приложение не копирует данные ни в какое облако.</p>
 
     <h3>Разрешения</h3>
-    <p>Mcrypt запрашивает только разрешения, необходимые для работы на устройстве. Доступ в интернет для хранения или чтения ваших данных не запрашивается.</p>
+    <p>Mcrypt не запрашивает ни одного разрешения Android — ни интернет, ни хранилище, ни контакты. Без разрешения на интернет операционная система просто не даст приложению ничего отправить. Это не обещание с нашей стороны — такой возможности у приложения нет.</p>
 
     <h3>Третьи стороны</h3>
     <p>Мы ничем не делимся, потому что ничего не получаем. Если вы сами скопируете файл резервной копии в сервис вроде Google Drive, файл останется зашифрованным и под вашим контролем; к нему будут применяться условия того сервиса.</p>
@@ -231,7 +231,7 @@
     <h3>Изменения</h3>
     <p>Если политика изменится, обновлённая версия появится на этой странице с новой датой.</p>
 
-    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Последнее обновление: 11 сентября 2026</p>
+    <p style="color:var(--ink-faint);font-family:var(--mono);font-size:13px;margin-top:26px">Последнее обновление: 10 сентября 2026</p>
   </div>
 </section>
 
